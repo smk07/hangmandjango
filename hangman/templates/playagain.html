@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Play Again</title>
+</head>
+<body>
+<!--    {% if msg %}
+        {% for msgs in msg %}
+            <h2>{{msgs}} </h2>
+        {% endfor %}
+    {% endif %} -->    
+        
+    <form action="hang" method="POST" >
+        {%csrf_token%}
+        <h5>Do you wanna play again ? (Y/N) </h5>
+        <input type="text" placeholder="Enter Y/N " name="playa"/>
+        <input type="submit" />
+    </form>
+</body>
+</html>
