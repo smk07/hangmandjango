@@ -26,9 +26,25 @@ def play(request):
     global chances
     ans=request.POST['answer']
     ques=request.POST['question']
+    que=ques
     ques=list(ques)
-    return render(request,'entry.html',{'ques1':''.join(ques),'chances':chances})
 
+    if len(ans) == len(que) :
+        print(len(que))
+        for i in range(len(ans)):
+            print (i)
+            
+            j=i
+            if ans[i]==que[i] or que[i]=='_':
+                continue
+            else:
+                ctypes.windll.user32.MessageBoxW(0, "Enter Same word","Error",0)
+                return render(request,'question.html')
+        if j==len(ans)-1:
+                return render(request,'entry.html',{'ques1':''.join(ques),'chances':chances})    
+    else:
+        ctypes.windll.user32.MessageBoxW(0, "Enter same word","Error",0)
+        return render(request,'question.html')
 
 def entry(request):
     global chances

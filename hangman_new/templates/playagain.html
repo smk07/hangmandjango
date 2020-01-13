@@ -16,7 +16,11 @@
     <form action="hang" method="POST" >
         {%csrf_token%}
         <h5>Do you wanna play again ? (Y/N) </h5>
-        <input type="text" placeholder="Enter Y/N " name="playa"/>
+       <!-- <input type="text" placeholder="Enter Y/N " name="playa"/>-->
+       
+        
+       <input type="radio" name="playa" value="1" /> Yes<br/>
+        <input type="radio" name="playa" value="0"/> No<br/>
         <input type="submit" />
     </form>
 </body>
